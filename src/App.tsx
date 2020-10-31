@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import Sidebar from './Sidebar';
+import Modal from './Modal';
 
 function App() {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -13,6 +14,7 @@ function App() {
         {!showSidebar && <button onClick={showSidebarHandler}>Show Nav</button>}
       </div>
       {showSidebar && <Sidebar sidebarHandler={showSidebarHandler} />}
+      <Modal />
     </div>
   );
 }
