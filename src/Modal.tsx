@@ -7,9 +7,7 @@ function Modal() {
 
   return (
     <Root>
-      <h1>Custom modal component</h1>
-      <h2>Example one</h2>
-      <button onClick={() => setIsModalOpen(true)}>OPEN MODAL</button>
+      <button onClick={() => setIsModalOpen(true)}>SHOW MODAL</button>
 
       {isModalOpen && (
         <Overlay>

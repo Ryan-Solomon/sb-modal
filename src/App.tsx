@@ -2,18 +2,17 @@ import React, { useState } from 'react';
 import './App.css';
 import Sidebar from './Sidebar';
 import Modal from './Modal';
+import { useGlobalContext } from './Context';
 
 function App() {
-  const [showSidebar, setShowSidebar] = useState(false);
-
-  const showSidebarHandler = () => setShowSidebar(!showSidebar);
+  const { show, setShow } = useGlobalContext()!;
 
   return (
     <div className='container'>
       <div className='show'>
-        {!showSidebar && <button onClick={showSidebarHandler}>Show Nav</button>}
+        {!show && <button onClick={setShow}>Show Nav</button>}
       </div>
-      {showSidebar && <Sidebar sidebarHandler={showSidebarHandler} />}
+      {show && <Sidebar sidebarHandler={setShow} />}
       <Modal />
     </div>
   );
